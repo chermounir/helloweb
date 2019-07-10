@@ -1,0 +1,308 @@
+/*
+nuestra hoja de estilos
+@autor
+@version 1.0
+@fecha 2019 06 27
+
+1.reset - reseaar estilos del user-agent
+2.Etiquitas - dar estilos base a todos los tags
+3.Clases comunes
+4.Layouts - secciones de la web (cabecera, menus, pies, etc..)
+5. Media Querys para RWD
+*/
+
+
+/* 1.reset
+*****************************************************/
+*{
+	margin:0;padding: 0;
+}
+/* 1.clearfix
+*****************************************************/
+.clearfix {
+  overflow: auto;
+}
+/* 2.Etiquetas
+*****************************************************/
+body{
+	margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;/*rem o em*/
+    font-weight: 400;/*grosor*/
+    line-height: 1.5;/*separacion entre lineas*/
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+   /*letter-spacing: 8px;
+       column-count: 4;
+       text-indent: 29px;*/
+}
+/*
+p::first-letter{}primera letra
+*/
+/* 3.Clases comunes
+*****************************************/
+#menu .active {
+    background: #003580;
+    border-radius: 2px;
+    color: #fff;
+    padding: 3px 8px;
+}
+#button-top{
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	z-index: 99;
+	background-color: white;
+	border-radius: 50%;
+}
+/* 4.Layouts
+*****************************************/
+.content{
+    max-width:1024px;
+	margin: auto;/*centrado en horezontal*/
+}
+main.content{
+	padding-top: 112px;
+	padding-bottom: 212px;
+	min-height: 52vh;
+}
+header#principal{
+	background-color: #003580;
+	color: #FFF ;
+	position: fixed;
+	width: 100%;
+	padding-top: 10px;
+	z-index: 9;
+}
+#main{
+	background-color: #DDD;
+	padding: 20px;
+	margin-top: 30px;
+	position: fixed;
+	bottom: 0;
+	/*top: 0;*/
+	width: 100%;	
+}
+
+a{
+color: #0358d8;
+}
+.contentMenu{
+	color: #FFF;
+    line-height: 1;
+    text-decoration: none;
+}
+a:hover {color: #d86c5c;}
+.selector{color:green;}
+.selector2{color:#ff0080;}
+.selector3{color:#0000ff;}
+
+/*menu*/
+.menu {
+    background: #f7f7f7;
+    border-bottom: 1px solid #dee0e2;
+    position: static;
+    transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+    width: 100%;
+    z-index: 10000;
+}
+.d-md-block {
+    display: block!important;
+}
+.m-b-0 {
+    margin-bottom: 0!important;
+}
+.d-flex, .metric {
+    display: flex!important;
+}
+ol, ul{
+	list-style-type: none;
+}
+.menu ul {
+    align-items: center;
+    height: 32px;
+    list-style: none;
+    padding-inline-start: 0px;
+
+}
+ul {
+    display: block;
+    /*list-style-type: disc;*/
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.menu li {
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 28px;
+    text-transform: uppercase;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.menu a {
+    color: #003580;
+    line-height: 1;
+    text-decoration: none;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;
+}
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+/*fin menu*/
+h1, h2, h3, h4, h5, h6 {
+    /*color: #2f363c;*/
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: capitalize;
+}
+p {
+    margin-top: 0; 
+    margin-bottom: 1rem;
+}
+.borderParrafo{
+border: 2px solid black;
+}
+.borderenlace{
+border: 2px dashed red;
+}
+.content h1{
+	margin-top: 0px;
+}
+label{
+	color: #212529;
+	margin-right: 15px;
+}
+
+label:after{
+	content:":";
+}
+
+label.obligatorio:before{
+	content:"(*)"; 
+}
+
+input[type="text"], input[type="number"], input[type="email"]{
+	border:none;
+	border-bottom: 2px solid #fb0000;
+	padding: 5px 10px;
+
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
+
+	font-size: 1.1em;
+
+	
+}
+input[type="text"]:invalid, input[type="number"]:invalid, input[type="email"]:invalid{
+
+	color: red;
+
+	
+}
+
+input[type="submit"]{
+	background-color: coral;
+
+}
+
+input[type="reset"]{
+	
+}
+
+.myButton {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:5px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+/*
+5. Media Querys para RWD*
+*****************************/
+/*mobile L*/
+/*@media(max-width:425px),(orientation: landscape and max-width:425px)*/
+@media(max-width:425px){
+footer#main{
+	position: relative;
+}
+#button-top {
+    bottom: 0.5em;
+    right: 0.5em;
+}
+.d-flex {
+    justify-content: space-around;
+}
+  main.content {
+	padding-left: 0.5em;
+    padding-right: 0.5em;
+}  
+}
+
+@media(max-width:320px){
+.contentMenu {
+	color: #08f5ec;
+}
+}
+@media(max-width:375px) and (min-width:321px){
+.contentMenu {
+    color: #f52a08;
+}
+}
+@media(max-width:425px) and (min-width:376px){
+.contentMenu {
+    color: #e5f508;
+}
+}
+@media(max-width:768px) and (min-width:426px){
+.contentMenu {
+    color: #20f508;
+}
+}
+@media(min-width:769px){
+.contentMenu {
+	    color: #FFF;
+}
+}
+/*@media(max-width:425px) and (orientation: landscape)*/
+
+.html{
+	margin-left: 2%;
+}
+.html img{
+	width: 80%;
+	height: auto;
+	margin-left: 11%;
+}
+pre {
+    width: 61%;
+    padding-left: 13%;
+}
+canvas { 
+	background: #eee; 
+ width: 61%;
+    margin-left: 13%;}

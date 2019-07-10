@@ -1,0 +1,110 @@
+/*
+2.1.1. Selector universal
+	* {
+Selector de tipo o etiqueta
+	p {
+2.1.3. Selector descendente
+	p, a, span, em { text-decoration: underline; }-->El estilo se aplica a todos los elementos "p", "a", "span" y "em" 
+	p a span em { text-decoration: underline; }-->El estilo se aplica solo a los elementos "em" que se encuentran dentro de "p a span"
+2.1.4. Selector de clase
+	.destacado { 
+	p.aviso { ... }-->Todos los elementos de tipo "p" con atributo class="aviso"
+	p .aviso { ... }-->Todos los elementos con atributo class="aviso" que estén dentro de cualquier elemento de tipo "p" 
+	p, .aviso { ... }-->Todos los elementos "p" de la página y todos los elementos con atributo class="aviso" de la página
+2.1.5. Selectores de ID
+	#destacado {
+	p#aviso { ... }-->Todos los elementos de tipo "p" con atributo id="aviso" 
+	p #aviso { ... }-->Todos los elementos con atributo id="aviso" que estén dentro de cualquier elemento de tipo "p"
+	p, #aviso { ... }-->Todos los elementos "p" de la página y todos los elementos con atributo id="aviso" de la página
+2.1.6. Combinación de selectores básicos
+	aviso .especial { ... }-->El selector solamente selecciona aquellos elementos con un class="especial" que se encuentren dentro de cualquier elemento con un class="aviso".
+	div.aviso span.especial { ... }-->el selector solamente selecciona aquellos elementos de tipo <span> con un atributo class="especial" que estén dentro de cualquier elemento de tipo <div> que tenga un atributo class="aviso".
+	ul#menuPrincipal li.destacado a#inicio { ... }-->El selector hace referencia al enlace con un atributo id igual a inicio que se encuentra dentro de un elemento de tipo <li> con un atributo class igual a destacado, que forma parte de una lista <ul> con un atributo id igual a menuPrincipal.
+2.2.1. Selector de hijos
+	<p><span>Texto1</span></p>
+	<p><a href="#"><span>Texto2</span></a></p>
+	p > span { color: blue; }--> el selector p > span se interpreta como "cualquier elemento <span> que sea hijo directo de un elemento <p>", por lo que el primer elemento <span> cumple la condición del selector. Sin embargo, el segundo elemento <span> no la cumple porque es descendiente pero no es hijo directo de un elemento <p>.
+2.2.2. Selector adyacente
+	h2 { color: green; }
+	h1 + h2 { color: red }
+	Las reglas CSS anteriores hacen que todos los <h2> de la página se vean de color verde, salvo aquellos <h2> que se encuentran inmediatamente después de cualquier elemento <h1> y que se muestran de color rojo.
+
+	Técnicamente, los elementos que forman el selector adyacente deben cumplir las dos siguientes condiciones:
+	-elemento1 y elemento2 deben ser elementos hermanos, por lo que su elemento padre debe ser el mismo.
+	-elemento2 debe aparecer inmediatamente después de elemento1 en el código HTML de la página.
+2.2.3. Selector de atributos
+	permiten seleccionar elementos HTML en función de sus atributos y/o valores de esos atributos.
+	Los cuatro tipos de selectores de atributos son:
+	[nombre_atributo], selecciona los elementos que tienen establecido el atributo llamado nombre_atributo, independientemente de su valor.
+	[nombre_atributo=valor], selecciona los elementos que tienen establecido un atributo llamado nombre_atributo con un valor igual a valor.
+	[nombre_atributo~=valor], selecciona los elementos que tienen establecido un atributo llamado nombre_atributo y al menos uno de los valores del atributo es valor.
+	[nombre_atributo|=valor], selecciona los elementos que tienen establecido un atributo llamado nombre_atributo y cuyo valor es una serie de palabras separadas con guiones, pero que comienza con valor. Este tipo de selector sólo es útil para los atributos de tipo lang que indican el idioma del contenido del elemento.
+  
+	a[class] { color: blue; }-->Se muestran de color azul todos los enlaces que tengan un atributo "class", independientemente de su valor
+	a[class="externo"] { color: blue; }-->Se muestran de color azul todos los enlaces que tengan un atributo "class" con el valor "externo"
+	a[href="http://www.ejemplo.com"] { color: blue; }-->Se muestran de color azul todos los enlaces que apunten al sitio "http://www.ejemplo.com"
+	a[class~="externo"] { color: blue; }-->Se muestran de color azul todos los enlaces que tengan un atributo "class" en el que al menos uno de sus valores sea "externo" 
+	*[lang=en] { ... }-->Selecciona todos los elementos de la página cuyo atributo "lang" sea igual a "en", es decir, todos los elementos en inglés 
+	*[lang|="es"] { color : red }--> Selecciona todos los elementos de la página cuyo atributo "lang" empiece por "es", es decir, "es", "es-ES", "es-AR", etc. 
+
+todo https://uniwebsidad.com/libros/css/capitulo-2/selectores-avanzados
+3.1.1. Unidades absolutas
+
+/* El cuerpo de la página debe mostrar un margen de media pulgada */
+body { margin: 0.5in; }
+
+/* Los elementos <h1> deben mostrar un interlineado de 2 centímetros */
+h1 { line-height: 2cm; }
+
+/* Las palabras de todos los párrafos deben estar separadas 4 milímetros entre si */
+p { word-spacing: 4mm; }
+
+/* Los enlaces se deben mostrar con un tamaño de letra de 12 puntos */
+a { font-size: 12pt }
+
+/* Los elementos <span> deben tener un tamaño de letra de 1 pica */
+span { font-size: 1pc }
+3.1.2. Unidades relativas
+
+
+
+
+abc…	Letters
+123…	Digits
+\d	Any Digit
+\D	Any Non-digit character
+.	Any Character
+\.	Period
+[abc]	Only a, b, or c
+[^abc]	Not a, b, nor c
+[a-z]	Characters a to z
+[0-9]	Numbers 0 to 9
+\w	Any Alphanumeric character
+\W	Any Non-alphanumeric character
+{m}	m Repetitions
+{m,n}	m to n Repetitions
+*	Zero or more repetitions
++	One or more repetitions
+?	Optional character
+\s	Any Whitespace
+\S	Any Non-whitespace character
+^…$	Starts and ends
+(…)	Capture Group
+(a(bc))	Capture Sub-group
+(.*)	Capture all
+(abc|def)	Matches abc or def
+
+		<!-- <img alt="gato" src="images/gato.jpg">-->
+		<!-- <base href="/helloweb/">-->
+<!--  no tienen contenidos <br><hr><img>-->
+<!-- 6<h1<h2<h3<h4<h5<h6 -->
+<!-- etiquetas para trabajar con texto<b>negrita<i>italica  -->
+<!--etiquitas de linea ocupa solo lo que ocupa el contenido  -->
+<!--etiquitas bloque  -->
+<!--  -->
+<!--  -->
+<!--  -->
+
+
+
+*/
